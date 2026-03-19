@@ -1,0 +1,111 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-implement-the-nutritionxp-storefront-ui-from-the-provided-html-into-the-existing-react-tailwind-app-and-make-all-pages-sections-fully-responsive-across-common-breakpoints-mobile-320px-tablet-768px-desktop-1024px-eliminating-horizontal-overflow-and-layout-breakage",
+      "featureTitle": "Implement the NutritionXP storefront UI from the provided HTML into the existing React + Tailwind app and make all pages/sections fully responsive across common breakpoints (mobile 320px+, tablet 768px+, desktop 1024px+), eliminating horizontal overflow and layout breakage.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/storefront/BrandsSlider.tsx",
+        "frontend/src/components/storefront/CategoryScroller.tsx",
+        "frontend/src/components/storefront/ProductCard.tsx",
+        "frontend/src/components/storefront/SeasonsBestsellersCarousel.tsx",
+        "frontend/src/components/storefront/SectionContainer.tsx",
+        "frontend/src/pages/CartPage.tsx",
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/pages/OrdersPage.tsx",
+        "frontend/src/pages/ProductDetailPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-make-the-header-navigation-responsive-by-adding-a-mobile-friendly-navigation-pattern-e-g-hamburger-menu-or-collapsible-drawer-ensuring-the-logo-nav-links-and-cart-icon-remain-accessible-on-small-screens",
+      "featureTitle": "Make the header/navigation responsive by adding a mobile-friendly navigation pattern (e.g., hamburger menu or collapsible drawer), ensuring the logo, nav links, and cart icon remain accessible on small screens.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/layout/Header.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-refactor-fixed-inline-sizing-in-the-provided-design-into-responsive-tailwind-styles-or-equivalent-responsive-css-so-hero-typography-section-paddings-card-layouts-and-footer-columns-scale-smoothly-across-breakpoints",
+      "featureTitle": "Refactor fixed/inline sizing in the provided design into responsive Tailwind styles (or equivalent responsive CSS) so hero typography, section paddings, card layouts, and footer columns scale smoothly across breakpoints.",
+      "files": [
+        "frontend/src/components/layout/Footer.tsx",
+        "frontend/src/index.css",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-all-interactive-storefront-flows-remain-usable-on-touch-devices-product-cards-product-detail-quantity-selector-add-to-cart-cart-quantity-controls-checkout-flow-order-history-and-notification-modal-including-scroll-locking-and-viewport-fit-positioning",
+      "featureTitle": "Ensure all interactive storefront flows remain usable on touch devices: product cards, product detail quantity selector, add-to-cart, cart quantity controls, checkout flow, order history, and notification modal (including scroll locking and viewport-fit positioning).",
+      "files": [
+        "frontend/src/components/storefront/NotificationModal.tsx",
+        "frontend/src/components/storefront/QuantitySelector.tsx",
+        "frontend/src/pages/CartPage.tsx",
+        "frontend/src/pages/ProductDetailPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-choose-and-apply-a-coherent-visual-theme-for-the-responsive-react-implementation-that-matches-the-nutritionxp-supplement-storefront-domain-and-remains-consistent-across-pages-colors-typography-spacing-and-component-styling-avoid-blue-purple-as-primary-accents",
+      "featureTitle": "Choose and apply a coherent visual theme for the responsive React implementation that matches the NutritionXP supplement storefront domain and remains consistent across pages (colors, typography, spacing, and component styling). Avoid blue/purple as primary accents.",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.625rem;
+        --background: 0.043 0 0;
+        --foreground: 0.985 0 0;
+        --card: 0.118 0 0;
+        --card-foreground: 0.985 0 0;
+        --popover: 0.118 0 0;
+        --popover-foreground: 0.985 0 0;
+        --primary: 0.685 0.18 35;
+        --primary-foreground: 0.043 0 0;
+        --secondary: 0.118 0 0;
+        --secondary-foreground: 0.985 0 0;
+        --muted: 0.118 0 0;
+        --muted-foreground: 0.708 0 0;
+        --accent: 0.23 0 0;
+        --accent-foreground: 0.985 0 0;
+        --destructive: 0.577 0.245 27.325;
+        --destructive-foreground: 0.985 0 0;
+        --border: 1 0 0 / 10%;
+        --input: 1 0 0 / 15%;
+        --ring: 0.685 0.18 35;
+        --chart-1: 0.685 0.18 35;
+        --chart-2: 0.6 0.118 184.704;
+        --chart-3: 0.398 0.07 227.392;
+        --chart-4: 0.828 0.189 84.429;
+        --chart-5: 0.769 0.188 70.08;
+    }
+
+    .dark {
+        --background: 0.043 0 0;
+        --foreground: 0.985 0 0;
+        --card: 0.118 0 0;
+        --card-foreground: 0.985 0 0;
+        --popover: 0.165 0 0;
+        --popover-foreground: 0.985 0 0;
+        --primary: 0.685 0.18 35;
+        --primary-foreground: 0.043 0 0;
+        --secondary: 0.165 0 0;
+        --secondary-foreground: 0.985 0 0;
+        --muted: 0.165 0 0;
+        --muted-foreground: 0.708 0 0;
+        --accent: 0.23 0 0;
+        --accent-foreground: 0.985 0 0;
+        --destructive: 0.704 0.191 22.216;
+        --destructive-foreground: 0.985 0 0;
+        --border: 1 0 0 / 10%;
+        --input: 1 0 0 / 15%;
+        --ring: 0.685 0.18 35;
+        --chart-1: 0.685 0.18 35;
+        --chart-2: 0.696 0.17 162.48;
+        --chart-3: 0.769 0.188 70.08;
+        --chart-4: 0.627 0.265 303.9;
+        --chart-5: 0.645 0.246 16.439;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        line-height: 1.6;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@layer utilities {
+    .scrollbar-custom {
+        scrollbar-width: thin;
+        scrollbar-color: #FC9145 #1E1E26;
+    }
+
+    .scrollbar-custom::-webkit-scrollbar {
+        height: 8px;
+        width: 8px;
+    }
+
+    .scrollbar-custom::-webkit-scrollbar-track {
+        background: #1E1E26;
+        border-radius: 10px;
+    }
+
+    .scrollbar-custom::-webkit-scrollbar-thumb {
+        background: #FC9145;
+        border-radius: 10px;
+    }
+
+    .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+        background: #FD8E49;
+    }
+
+    .bg-gradient-radial {
+        background: radial-gradient(circle at top, #784b2b, #0b0f14);
+    }
+}
+
+@keyframes bounceDot {
+    0% {
+        top: 10%;
+    }
+    50% {
+        top: 90%;
+    }
+    100% {
+        top: 10%;
+    }
+}

@@ -1,0 +1,186 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "NutritionXP Store — Responsive storefront UI (React + Tailwind + shadcn/ui)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Implement storefront UI in React + Tailwind and make all sections/pages fully responsive across mobile/tablet/desktop with no horizontal overflow.",
+      "acceptanceCriteria": [
+        "No horizontal scrolling occurs at 320px, 375px, 768px, 1024px, and 1440px viewport widths (except intentional horizontal carousels).",
+        "All text remains readable without manual zooming; headings, body text, and buttons scale appropriately via responsive typography.",
+        "All major sections (Header/Nav, Hero, Best Selling Products grid, Gallery, Category scroller, Season’s Bestsellers carousel, Brands slider, Why Choose, Footer/Contact form, Product Detail, Cart, Orders, Notification popup) adapt to small screens without overlap or clipped content.",
+        "All images use responsive sizing (e.g., constrained height with object-fit) and do not stretch or overflow containers.",
+        "Spacing and alignment remain consistent across breakpoints (no elements off-screen, no unreadably tight padding)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the app shell and routing that wires all required storefront views (home sections, product detail, cart, orders) into a single responsive layout with shared Header/Footer. Use shadcn/ui composition where appropriate (e.g., layout primitives); verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "create",
+          "description": "Implement the storefront landing page sections (Hero, Best Selling grid, Gallery, Category scroller, Season’s Bestsellers carousel, Brands slider, Why Choose) using responsive Tailwind layouts and intentional horizontal carousels only where required. Use shadcn/ui composition for cards/buttons where appropriate; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/ProductDetailPage.tsx",
+          "operation": "create",
+          "description": "Create a responsive product detail view (image + info + quantity + add-to-cart) with mobile-first stacking and image sizing via object-fit. Use shadcn/ui composition for buttons/inputs/dialog triggers where appropriate; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/CartPage.tsx",
+          "operation": "create",
+          "description": "Create a responsive cart view with adaptable cart-item rows, quantity controls, remove actions, and totals that do not truncate at small widths. Use shadcn/ui composition for controls; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/OrdersPage.tsx",
+          "operation": "create",
+          "description": "Create a responsive order history view with readable rows/cards on mobile and compact table-like layout on desktop. Use shadcn/ui composition for list/card styling where appropriate; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/storefront/SectionContainer.tsx",
+          "operation": "create",
+          "description": "Add a reusable section container enforcing max-width, consistent responsive padding, and overflow guards to prevent horizontal scrolling across pages. Use shadcn/ui composition only as wrappers if needed; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/storefront/ProductCard.tsx",
+          "operation": "create",
+          "description": "Add a responsive product card component with consistent image aspect ratio, readable typography, and touch-friendly actions. Use shadcn/ui composition for card/button elements; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/storefront/CategoryScroller.tsx",
+          "operation": "create",
+          "description": "Implement an intentional horizontal category scroller with proper snap/scroll behavior, safe padding, and no layout overflow at 320px. Use shadcn/ui composition for pills/buttons where appropriate; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/storefront/SeasonsBestsellersCarousel.tsx",
+          "operation": "create",
+          "description": "Implement a responsive carousel-like section that degrades gracefully to stacked cards on small screens while keeping intentional horizontal scrolling contained. Use shadcn/ui composition for controls; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/storefront/BrandsSlider.tsx",
+          "operation": "create",
+          "description": "Implement a responsive brands slider/strip with overflow containment and consistent logo sizing via object-fit. Use shadcn/ui composition for any buttons/controls; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Make the header/navigation responsive with a mobile-friendly menu pattern while keeping logo and cart accessible.",
+      "acceptanceCriteria": [
+        "At <=768px width, nav links do not wrap into multiple cramped rows; navigation is accessible via a toggleable menu.",
+        "Cart icon and cart count remain visible and tappable on mobile.",
+        "Header remains usable and visually stable when scrolling (sticky behavior preserved or replaced with an equivalent responsive solution)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/layout/Header.tsx",
+          "operation": "create",
+          "description": "Create a sticky, responsive header that shows logo + cart on all sizes and switches desktop nav links to a hamburger-triggered drawer on mobile. Use shadcn/ui Sheet (drawer) composition for the mobile menu; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/layout/MobileNav.tsx",
+          "operation": "create",
+          "description": "Implement the mobile navigation contents (links, categories shortcuts if needed, close behavior) optimized for touch and accessible focus management. Use shadcn/ui primitives inside the drawer; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the new Header into the shared layout and ensure navigation items route to the correct views without creating orphan pages. Use shadcn/ui composition where needed; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Refactor fixed/inline sizing into responsive Tailwind styles for typography, spacing, grids, and footer columns.",
+      "acceptanceCriteria": [
+        "Hero headings scale down on mobile (no clipping; no forcing two lines off-screen; appropriate top margin/padding).",
+        "Section padding reduces appropriately on small screens (e.g., 60px desktop -> ~40px mobile) without crowding content.",
+        "Card grids switch from multi-column to 1-column on small screens, 2-columns on tablets where appropriate, and 3+ on larger screens.",
+        "Footer switches from multi-column to single column on small screens with correct spacing and readable form controls."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Replace any fixed pixel sizing and inline styles with Tailwind responsive utilities (typography scale, spacing, grid columns) across all landing sections. Use shadcn/ui composition for consistent button/input styles; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/layout/Footer.tsx",
+          "operation": "create",
+          "description": "Create a responsive footer with contact form that collapses to a single column on mobile and maintains readable form controls and spacing. Use shadcn/ui Input/Textarea/Button composition for form controls; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Add global base styles to support responsive typography and prevent overflow (e.g., safe defaults for images/media, consistent body line-height, and global overflow-x rules). Keep styling consistent with Tailwind/shadcn conventions; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Ensure all interactive storefront flows are touch-usable (controls sizing, modal behavior, mobile layouts, scroll locking).",
+      "acceptanceCriteria": [
+        "Buttons and tap targets meet mobile usability expectations (no tiny controls; adequate spacing).",
+        "The notification popup fits within the viewport on 320px width and can be dismissed reliably (overlay tap and button).",
+        "Product detail page stacks image/info vertically on mobile and keeps key actions visible without awkward scrolling.",
+        "Cart items layout adapts to small screens without truncating prices, quantity controls, or remove actions."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/storefront/QuantitySelector.tsx",
+          "operation": "create",
+          "description": "Implement a touch-friendly quantity selector (buttons and input sizing, spacing, disabled states) reusable in product detail and cart. Use shadcn/ui Button/Input composition; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/storefront/NotificationModal.tsx",
+          "operation": "create",
+          "description": "Implement a responsive notification modal that fits at 320px width with reliable dismissal (overlay + close button) and proper scroll locking. Use shadcn/ui Dialog composition for modal accessibility and focus handling; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/hooks/useScrollLock.ts",
+          "operation": "create",
+          "description": "Add a small hook to manage body scroll locking for overlays/modals in a way that avoids layout shift and works on mobile browsers."
+        },
+        {
+          "path": "frontend/src/pages/ProductDetailPage.tsx",
+          "operation": "modify",
+          "description": "Ensure mobile-first stacking, adequate tap target sizing, and stable positioning of key actions (quantity + add-to-cart), integrating the shared QuantitySelector and NotificationModal. Use shadcn/ui composition; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/CartPage.tsx",
+          "operation": "modify",
+          "description": "Refine cart item layout for small screens (wrapping rules, alignment, non-truncating price/controls) and integrate the shared QuantitySelector. Use shadcn/ui composition for buttons; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Apply a consistent dark fitness/performance theme (non-blue/purple accents) across the responsive storefront.",
+      "acceptanceCriteria": [
+        "A consistent design system is evident across all pages (shared typography scale, consistent button styles, consistent card styling).",
+        "Primary accents are not blue/purple; the theme remains aligned with a dark, performance/fitness aesthetic.",
+        "No mixed styling approaches that cause inconsistency (e.g., scattered inline styles that override global look)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define/adjust CSS variables used by Tailwind/shadcn tokens to establish a cohesive dark theme with non-blue/purple primary accents (e.g., orange/amber + neutral grays), and set consistent base typography. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Tune Tailwind theme extensions as needed for consistent typography and layout (e.g., fontFamily, container padding consistency) while retaining existing shadcn token mapping and breakpoints."
+        },
+        {
+          "path": "frontend/src/components/storefront/StorefrontTheme.ts",
+          "operation": "create",
+          "description": "Add a small theme helper (constants for className patterns like button/card styles) to keep visual styling consistent across pages without adding scattered inline overrides."
+        }
+      ]
+    }
+  ]
+}

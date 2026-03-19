@@ -1,0 +1,23 @@
+{
+  "frontend/src/App.tsx": "Main application component managing routing between home, product detail, cart, and orders pages with cart state management and localStorage persistence.",
+  "frontend/src/lib/types.ts": "TypeScript type definitions for Product, CartItem, Order, Category, and Brand interfaces used throughout the application.",
+  "frontend/src/lib/data.ts": "Static data arrays containing products, categories, and brands with placeholder images and descriptions.",
+  "frontend/src/components/layout/Header.tsx": "Responsive sticky header with logo, desktop navigation, mobile hamburger menu using Sheet component, and cart icon with count badge.",
+  "frontend/src/components/layout/Footer.tsx": "Responsive footer with contact information, social links, quick navigation, contact form, and caffeine.ai attribution.",
+  "frontend/src/pages/HomePage.tsx": "Landing page composing hero, products grid, gallery, categories scroller, bestsellers carousel, brands slider, and why-choose sections.",
+  "frontend/src/pages/ProductDetailPage.tsx": "Product detail view with responsive image/info layout, quantity selector, features list, and add-to-cart action.",
+  "frontend/src/pages/CartPage.tsx": "Shopping cart page with responsive item cards, quantity controls, remove actions, order summary, and checkout button.",
+  "frontend/src/pages/OrdersPage.tsx": "Order history page displaying past orders with items, totals, and status in responsive card layout.",
+  "frontend/src/components/storefront/SectionContainer.tsx": "Reusable section wrapper providing consistent container width, padding, and overflow handling across breakpoints.",
+  "frontend/src/components/storefront/ProductCard.tsx": "Responsive product card with circular image, hover effects, price display, and view details button.",
+  "frontend/src/components/storefront/CategoryScroller.tsx": "Horizontal scrolling category cards with images, descriptions, and view more buttons.",
+  "frontend/src/components/storefront/SeasonsBestsellersCarousel.tsx": "Horizontal scrolling carousel of featured products with white card design and detailed info.",
+  "frontend/src/components/storefront/BrandsSlider.tsx": "Horizontal scrolling brand logos with circular images and hover effects on gradient background.",
+  "frontend/src/components/storefront/WhyChooseSection.tsx": "Feature highlights section with icons and descriptions in responsive grid layout.",
+  "frontend/src/components/storefront/GallerySection.tsx": "Responsive image gallery grid with hover effects on gradient background.",
+  "frontend/src/components/storefront/HeroSection.tsx": "Full-height hero section with background image, animated lines, and large heading text.",
+  "frontend/src/components/storefront/QuantitySelector.tsx": "Reusable quantity control with plus/minus buttons supporting compact and full modes.",
+  "frontend/src/components/storefront/NotificationModal.tsx": "Success modal dialog for order confirmation using shadcn Dialog component with responsive sizing.",
+  "frontend/src/index.css": "Global styles with OKLCH color system customized for dark fitness theme with orange/amber accents, custom scrollbar, and animations.",
+  "frontend/tailwind.config.js": "Tailwind configuration with Poppins font, responsive container padding, and extended theme matching the fitness aesthetic."
+}

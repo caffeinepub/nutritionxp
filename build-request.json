@@ -1,0 +1,128 @@
+{
+  "kind": "build_request",
+  "title": "Make NutritionXP storefront fully responsive across mobile, tablet, and desktop",
+  "projectName": "NutritionXP Store",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Implement the NutritionXP storefront UI from the provided HTML into the existing React + Tailwind app and make all pages/sections fully responsive across common breakpoints (mobile 320px+, tablet 768px+, desktop 1024px+), eliminating horizontal overflow and layout breakage.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "i have code for website, make it fully responsive on all types of screens and mobiles"
+        ]
+      },
+      "acceptanceCriteria": [
+        "No horizontal scrolling occurs at 320px, 375px, 768px, 1024px, and 1440px viewport widths (except intentional horizontal carousels).",
+        "All text remains readable without manual zooming; headings, body text, and buttons scale appropriately via responsive typography.",
+        "All major sections (Header/Nav, Hero, Best Selling Products grid, Gallery, Category scroller, Season’s Bestsellers carousel, Brands slider, Why Choose, Footer/Contact form, Product Detail, Cart, Orders, Notification popup) adapt to small screens without overlap or clipped content.",
+        "All images use responsive sizing (e.g., constrained height with object-fit) and do not stretch or overflow containers.",
+        "Spacing and alignment remain consistent across breakpoints (no elements off-screen, no unreadably tight padding)."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Make the header/navigation responsive by adding a mobile-friendly navigation pattern (e.g., hamburger menu or collapsible drawer), ensuring the logo, nav links, and cart icon remain accessible on small screens.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "make it fully responsive on all types of screens and mobiles"
+        ]
+      },
+      "acceptanceCriteria": [
+        "At <=768px width, nav links do not wrap into multiple cramped rows; navigation is accessible via a toggleable menu.",
+        "Cart icon and cart count remain visible and tappable on mobile.",
+        "Header remains usable and visually stable when scrolling (sticky behavior preserved or replaced with an equivalent responsive solution)."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Refactor fixed/inline sizing in the provided design into responsive Tailwind styles (or equivalent responsive CSS) so hero typography, section paddings, card layouts, and footer columns scale smoothly across breakpoints.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "<h3 style=\"text-align: center; margin-top: 220px; ...font-size: 90px;\">Delivering Only 100%</h3>"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero headings scale down on mobile (no clipping; no forcing two lines off-screen; appropriate top margin/padding).",
+        "Section padding reduces appropriately on small screens (e.g., 60px desktop -> ~40px mobile) without crowding content.",
+        "Card grids switch from multi-column to 1-column on small screens, 2-columns on tablets where appropriate, and 3+ on larger screens.",
+        "Footer switches from multi-column to single column on small screens with correct spacing and readable form controls."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Ensure all interactive storefront flows remain usable on touch devices: product cards, product detail quantity selector, add-to-cart, cart quantity controls, checkout flow, order history, and notification modal (including scroll locking and viewport-fit positioning).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "make it fully responsive on all types of screens and mobiles"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Buttons and tap targets meet mobile usability expectations (no tiny controls; adequate spacing).",
+        "The notification popup fits within the viewport on 320px width and can be dismissed reliably (overlay tap and button).",
+        "Product detail page stacks image/info vertically on mobile and keeps key actions visible without awkward scrolling.",
+        "Cart items layout adapts to small screens without truncating prices, quantity controls, or remove actions."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Choose and apply a coherent visual theme for the responsive React implementation that matches the NutritionXP supplement storefront domain and remains consistent across pages (colors, typography, spacing, and component styling). Avoid blue/purple as primary accents.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "NutritionXP – Zym Products"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A consistent design system is evident across all pages (shared typography scale, consistent button styles, consistent card styling).",
+        "Primary accents are not blue/purple; the theme remains aligned with a dark, performance/fitness aesthetic.",
+        "No mixed styling approaches that cause inconsistency (e.g., scattered inline styles that override global look)."
+      ]
+    }
+  ],
+  "constraints": [
+    "Frontend must be implemented with React + TypeScript using Tailwind CSS and shadcn/ui composition (do not edit files under frontend/src/components/ui).",
+    "Do not modify files listed as immutable in SYSTEM_CONTEXT (frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui).",
+    "Backend changes are not required for this request; keep all changes in the frontend unless absolutely necessary."
+  ],
+  "nonGoals": [
+    "Implementing real payment processing or integrating third-party checkout services.",
+    "Adding or changing product/business logic beyond what is necessary to preserve existing UI behavior while making it responsive.",
+    "Adding third-party authentication providers beyond Internet Identity."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [
+      "Use English for user-facing text in build requests."
+    ],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}
